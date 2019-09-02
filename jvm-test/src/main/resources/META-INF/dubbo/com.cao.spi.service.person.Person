@@ -1,0 +1,2 @@
+student=com.cao.spi.service.person.Student
+teacher=com.cao.spi.service.person.Teacher

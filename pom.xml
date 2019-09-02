@@ -10,6 +10,9 @@
   <modules>
     <module>day02_work03_spring_aop</module>
     <module>day02_work04_spring_aop_exception</module>
+    <module>dubbo-source</module>
+    <module>netty-demo</module>
+    <module>jvm-test</module>
   </modules>
 
 </project>

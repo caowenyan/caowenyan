@@ -1,0 +1,3 @@
+log4j=com.cao.spi.service.log.Log4j
+logback=com.cao.spi.service.log.Logback
+logset=com.cao.spi.service.log.LogSet
