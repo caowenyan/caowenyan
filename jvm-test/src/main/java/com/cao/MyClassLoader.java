@@ -25,6 +25,10 @@ public class MyClassLoader extends ClassLoader {
         this.classLoaderName = classLoaderName;
     }
 
+    public MyClassLoader(ClassLoader classLoader) {
+        super(classLoader);
+    }
+
     public MyClassLoader(ClassLoader classLoader, String classLoaderName) {
         super(classLoader);
         this.classLoaderName = classLoaderName;
@@ -66,10 +70,4 @@ public class MyClassLoader extends ClassLoader {
         }
         return data;
     }
-
-    @Override
-    public String toString() {
-        return "[" + classLoaderName + "]";
-    }
-
 }
