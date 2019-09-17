@@ -1,7 +1,7 @@
 package com.cao;
 /**
  * 对于数组实例来说，其类型是由JVM早运行期动态生成的，表示为[L类的全限定名称
- * 对于这种形式，动态生成的类型，其父类是Object  对于数组来说，
+ * 对于这种形式，动态生成的类型，其父类是Object ，所以不会导致基类被初始化 对于数组来说，
  * JavaDoc经常将构成数组元素为Component，实际上就是将数组降低一个维度后的类型
  * <p>
  * 助记符：
@@ -17,6 +17,7 @@ public class MyTest5 {
         MyParent4[][] myParent5s1 = new MyParent4[1][];
         System.out.println(myParent5s1.getClass());
         System.out.println(myParent5s1.getClass().getSuperclass());
+
         int[] ints = new int[1];
         System.out.println(ints.getClass());
         System.out.println(ints.getClass().getSuperclass());

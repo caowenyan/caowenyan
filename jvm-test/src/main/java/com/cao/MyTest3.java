@@ -1,6 +1,6 @@
 package com.cao;
  
-/** 助记符： javap -c MyTest3
+/** 助记符： javap -c com.cao.MyTest3
  ldc：表示将int，float，或是string类型的常量值从常量池中推至栈顶 
  bipush：表示将单个字节（-128~127）的常量值推至到栈顶 
  sipush：表示将一个短整型常量值（-32768~32767）推送到栈顶 

@@ -14,7 +14,7 @@ import java.lang.reflect.Method;
       类加载器来加载他们即可。不同类加载器所加载的类之间是不兼容的，这就相当于在java虚拟机内部创建了一个又一个相互隔离的
       java类空间，这类技术在很多框架中都得到了实际应用。
 
- 若是将MyPerson移动到桌面的文件夹中，则会出现的问题是，不同类加载器加载的类不同：
+ 若是将MyPerson移动到桌面的文件夹中，则会出现的问题（经典的A不能转化为A），不同类加载器加载的类不同：
  findClass invoke: com.cao.MyPerson
  class loader name: loader1
  findClass invoke: com.cao.MyPerson

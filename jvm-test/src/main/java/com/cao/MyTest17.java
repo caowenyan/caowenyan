@@ -13,7 +13,7 @@ public class MyTest17 {
         System.out.println("class:" + clazz.hashCode());
 
         // 如果注释掉该行，那么并不会实例化MySample对象，即MySample构造方法不会被调用
-        // 因此不会实例化MyCat对象，既没有MyCat进行主动使用，这里就不回家再MyCat Class
+        // 因此不会实例化MyCat对象，既没有MyCat进行主动使用，这里就不会加载MyCat Class
         Object object = clazz.newInstance();
     }
 }

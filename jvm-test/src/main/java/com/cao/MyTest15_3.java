@@ -8,7 +8,7 @@ import java.io.InputStream;
 /**
  此例子主要是因为不同的类加载器的命名空间不同导致的问题，
  若是相同的命名空间只会加载一次，比如通过系统类加载器加载
- 若是不同的命名空间会加载多次，比如删除MyTest1.class通过自定义类类加载器加载
+ 若是不同的命名空间会加载多次，比如删除target下的MyTest1.class通过自定义类类加载器加载
  */
 public class MyTest15_3 extends ClassLoader {
     private String classLoaderName;

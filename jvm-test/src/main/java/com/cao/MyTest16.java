@@ -10,6 +10,8 @@ import java.io.InputStream;
  若是通过用户自定义类加载器加载MyTest1，执行gc则会回收MyTest1
  回收前提：必须类加载器，类，实例都置为null才可以回收
 
+ 若想看到打印的日志：-XX:+TraceClassUnloading
+
  方法：下面两段选择其中一个就可以实现回收
  */
 public class MyTest16 extends ClassLoader {

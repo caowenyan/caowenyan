@@ -8,6 +8,12 @@ import java.io.InputStream;
 /**
  本例子前提是删除了classpath下的MyTest1.class文件，
  主要是为了系统类加载器加载不到MyTest1类，这样才可以保证用户自定义加载器加载到MyTest1类
+
+ findClass invoke: com.cao.MyTest1
+ class loader name: loader1
+ class hashcode: 723074861
+ class instance: com.cao.MyTest1@355da254
+ class loader name: [loader1]
  */
 public class MyTest15_2 extends ClassLoader {
     private String classLoaderName;

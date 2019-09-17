@@ -1,5 +1,8 @@
 package com.cao;
 
+/**
+ * 初始化和静态变量的顺序有关
+ */
 public class MyTest6 {
     public static void main(String[] args) {
         System.out.println(Singleton.getInstance());
