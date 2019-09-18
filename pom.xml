@@ -13,6 +13,7 @@
     <module>dubbo-source</module>
     <module>netty-demo</module>
     <module>jvm-test</module>
+    <module>coding-interviews</module>
   </modules>
 
 </project>
