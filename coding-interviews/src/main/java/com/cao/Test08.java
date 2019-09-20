@@ -40,11 +40,62 @@ public class Test08 {
             } else {
                 start = mid;
             }
+            if (numbers[end] >= numbers[mid]) {
+                end = mid;
+            } else if (numbers[start] <= numbers[mid]) {
+                start = mid;
+            }
         }
         // 处理全都是递增子序列的情况
         return (numbers[start] > numbers[end]? numbers[end]:numbers[start]);
     }
 
+    /**
+     * 剑指offer书上的解题思路，总觉得下面会出现异常，死循环，但是不会的主要原因是因为while条件限制了低位的大于高位的
+     * 和上边的对比：上边的会多循环几次，而且条件冗杂。
+     */
+    public static int min2(int[] numbers) {
+        // 判断输入是否合法
+        if (numbers == null || numbers.length == 0) {
+            throw new RuntimeException("Invalid input.");
+        }
+
+        // 开始处理的第一个位置
+        int lo = 0;
+        // 开始处理的最后一个位置
+        int hi = numbers.length - 1;
+        // 设置初始值，这个地方主要是应对全都是递增的问题，这样就可以直接设置值了。
+        int mi = lo;
+
+        // 确保lo在前一个排好序的部分，hi在排好序的后一个部分
+        while (numbers[lo] >= numbers[hi]) {
+            // 当处理范围只有两个数据时，返回后一个结果
+            // 因为numbers[lo] >= numbers[hi]总是成立，后一个结果对应的是最小的值
+            if (hi - lo == 1) {
+                return numbers[hi];
+            }
+
+            // 取中间的位置
+            mi = lo + (hi - lo) / 2;
+
+            // 如果三个数都相等，则需要进行顺序处理，从头到尾找最小的值
+            if (numbers[mi] == numbers[lo] && numbers[hi] == numbers[mi]) {
+                return minInorder(numbers, lo, hi);
+            }
+
+            // 如果中间位置对应的值在前一个排好序的部分，将lo设置为新的处理位置
+            if (numbers[mi] >= numbers[lo]) {
+                lo = mi;
+            }
+            // 如果中间位置对应的值在后一个排好序的部分，将hi设置为新的处理位置
+            else if (numbers[mi] <= numbers[hi]) {
+                hi = mi;
+            }
+        }
+
+        // 返回最终的处理结果
+        return numbers[mi];
+    }
     /**
      * 找数组中的最小值
      *
