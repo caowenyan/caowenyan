@@ -27,17 +27,15 @@ public class Test15 {
         }
         int num = 0;
         ListNode currentK = head;
+        k = k - 1;
         // 防止k过大，溢出
         while (num < k && currentK != null) {
             num ++ ;
             currentK = currentK.next;
         }
         // 说明链表没有k个元素
-        if (num < k) {
+        if (num < k || currentK == null) {
             return null;
-        }
-        if (num == k && currentK == null) {
-            return head;
         }
         ListNode result = head;
         while (currentK.next != null) {
