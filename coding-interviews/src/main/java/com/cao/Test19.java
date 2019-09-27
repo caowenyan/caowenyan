@@ -24,15 +24,34 @@ public class Test19 {
      *
      * @param node 二叉树的根结点
      */
-    public static void mirror(BinaryTreeNode node) {
+    public static void mirror1(BinaryTreeNode node) {
         if (node == null) {
             return;
         }
         BinaryTreeNode right = node.right;
         node.right = node.left;
         node.left = right;
-        mirror(node.left);
-        mirror(node.right);
+        mirror1(node.left);
+        mirror1(node.right);
+    }
+    public static void mirror(BinaryTreeNode node) {
+        if (node == null) {
+            return;
+        }
+        Queue<BinaryTreeNode> list = new LinkedList();
+        list.add(node);
+        while (list.size() != 0) {
+            BinaryTreeNode current = list.poll();
+            BinaryTreeNode right = current.right;
+            current.right = current.left;
+            current.left = right;
+            if (current.left != null) {
+                list.add(current.left);
+            }
+            if (current.right != null) {
+                list.add(current.right);
+            }
+        }
     }
 
     /**
@@ -55,6 +74,7 @@ public class Test19 {
             }
         }
     }
+
     public static void main(String[] args) {
         //       8
         //    /    \
