@@ -14,7 +14,7 @@ public class Test17 {
 
     /**
      * 输入两个递增排序的链表，合并这两个链表并使新链表中的结点仍然是按照递增排序的
-     *
+     * 改变了原有的元素的顺序很不好，所以可以用值来代替地址
      * @param head1 第一个有序链表
      * @param head2 第二个有序链表
      * @return 合并后的有序链表头
@@ -37,7 +37,6 @@ public class Test17 {
                 head1 = head1.next;
             }
             node = node.next;
-            node.next = null;
         }
         if (head1 != null) {
             node.next = head1;
@@ -47,6 +46,7 @@ public class Test17 {
         }
         return head.next;
     }
+
     public static ListNode merge2(ListNode head1, ListNode head2) {
         if (head1 == null) {
             return head2;
@@ -111,9 +111,11 @@ public class Test17 {
 
         ListNode head = merge(head1, head2);
         printList(head);
+        printList(head1);
+        printList(head2);
         System.out.println();
 
-        head = merge2(head1, head2);
+        head = merge(head1, head2);
         printList(head);
     }
 }
