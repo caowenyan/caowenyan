@@ -6,7 +6,7 @@ package com.jvm.bytes.code;
  */
 public class MyTest2 {
     String str = "Hello world";
-    private int x = 8;
+    private int x = 100;
     public static Integer in = 10;
 
     public static void main(String[] args) {
