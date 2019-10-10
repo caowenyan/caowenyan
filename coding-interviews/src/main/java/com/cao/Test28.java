@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * @author 曹文艳   (caowy@cloud-young.com)
  * @version V1.0
- * @description
+ * @description 排列和组合
  * @date 2019年10月10日 10:34
  */
 public class Test28 {
@@ -80,6 +80,13 @@ public class Test28 {
         }
     }
 
+    /**
+     * 求size个大小的chars组合
+     * @param chars 原始元素
+     * @param size 组合元素的个数
+     * @param begin 开始元素
+     * @param addChars 组合选中的元素
+     */
     private static void combination(char[] chars, int size, int begin, List<Character>addChars) {
         if (addChars.size() == size) {
             System.out.println(Arrays.toString(addChars.toArray()));
