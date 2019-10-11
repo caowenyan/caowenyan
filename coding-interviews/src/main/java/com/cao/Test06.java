@@ -30,6 +30,7 @@ public class Test06 {
     }
 
     public static BinaryTreeNode constructCore(int[]preorder, int[]inorder, int preorderStart, int preorderEnd, int inorderStart, int inorderEnd) {
+        // 注意这里索引，不能是等于，因为等于是当前元素本身
         if (preorderEnd < preorderStart || inorderEnd < inorderStart) {
             return null;
         }

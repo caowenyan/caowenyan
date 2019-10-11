@@ -55,17 +55,17 @@ public class Test07 {
         }
 
         // 删除操作，在队列头部删除结点
-        public T deleteHead() {
+        public T deleteTail() {
             if (!queue1.isEmpty()){
-                return deleteHead(queue1, queue2);
+                return deleteTail(queue1, queue2);
             }
             if (!queue2.isEmpty()) {
-                return deleteHead(queue2, queue1);
+                return deleteTail(queue2, queue1);
             }
             return null;
         }
 
-        private T deleteHead(Queue<T> dataQueue, Queue<T> emptyQueue) {
+        private T deleteTail(Queue<T> dataQueue, Queue<T> emptyQueue) {
             T data = dataQueue.poll();
             while (!dataQueue.isEmpty()) {
                 emptyQueue.add(data);
@@ -91,10 +91,10 @@ public class Test07 {
         stack.appendTail("a");
         stack.appendTail("b");
         stack.appendTail("c");
-        System.out.println(stack.deleteHead());
-        System.out.println(stack.deleteHead());
+        System.out.println(stack.deleteTail());
+        System.out.println(stack.deleteTail());
         stack.appendTail("d");
-        System.out.println(stack.deleteHead());
-        System.out.println(stack.deleteHead());
+        System.out.println(stack.deleteTail());
+        System.out.println(stack.deleteTail());
     }
 }

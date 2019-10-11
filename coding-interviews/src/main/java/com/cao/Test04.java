@@ -35,6 +35,7 @@ public class Test04 {
         }
         // 从后往前写的索引位置
         int realIndex = finalLength - 1;
+        // 回过头来看还以为readIndex > i这个条件是错的，仔细想想才知道若是readIndex == i的时候说明已经没有空格了，不用在比较了，减少了了无用的赋值
         for (int i = usedLength - 1 ; i >=0 && realIndex > i; i -- ) {
             if (string[i] == ' ') {
                 string[realIndex -- ] = '0';
@@ -64,5 +65,22 @@ public class Test04 {
 
         int length = replaceBlank(string, 12);
         System.out.println(new String(string, 0, length));
+
+        char[] string1 = new char[50];
+        string1[0] = 'a';
+        string1[1] = 'e';
+        string1[2] = ' ';
+        string1[3] = ' ';
+        string1[4] = 'r';
+        string1[5] = 'e';
+        string1[6] = ' ';
+        string1[7] = ' ';
+        string1[8] = 'a';
+        string1[9] = ' ';
+        string1[10] = 'p';
+        string1[11] = ' ';
+
+        length = replaceBlank(string1, 12);
+        System.out.println(new String(string1, 0, length));
     }
 }
