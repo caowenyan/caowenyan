@@ -16,9 +16,50 @@ public class Test20 {
         if (numbers == null || numbers[0].length == 0) {
             return;
         }
-        printNMatrix(numbers, 0, numbers.length, numbers[0].length);
+//        printNMatrix(numbers, 0, numbers.length, numbers[0].length);
+        printNMatrix2(numbers, 0, numbers.length - 1, numbers[0].length - 1);
     }
 
+    /**
+     * 这道题开始的时候因为x轴和y轴确定错误，导致计算反了，所以这个一定需要注意
+
+     ---------------------->y轴，表示的是第几列数据，如第0列是a,h,r
+     | |  ---------------
+     | |  |a|b|c|d|e|f|g|
+     | |  |h|i|j|k|o|p|q|
+     | |  |r|s|t|u|v|w|x|
+     | |  ---------------
+     x轴，表示的是第几行数据，如第0行表示的是a,b..；第一行表示的是h,i...
+
+     * @param arr
+     * @param step 第几圈
+     * @param mx   第几行
+     * @param my   第几列
+     */
+    public static void printNMatrix2(int[][]arr, int step, int mx, int my) {
+        if (arr== null || arr.length == 0 || arr[0].length == 0 || step << 1  >= mx + 1 || step << 1 >= my + 1) {
+            return;
+        }
+        for (int i = step; i <= my - step; i++) {
+            System.out.print(arr[step][i] + " ");
+        }
+        if (step << 1 < mx) {
+            for (int i = step + 1; i <= mx - step; i ++) {
+                System.out.print(arr[i][my-step] + " ");
+            }
+        }
+        if (step << 1 < mx && step << 1 < my) {
+            for (int i = my-step-1; i >=step; i--) {
+                System.out.print(arr[mx-step][i] + " ");
+            }
+        }
+        if (step << 1 < my && step << 1 + 1< mx) {
+            for (int i = mx-step - 1; i > step; i --) {
+                System.out.print(arr[i][step] + " ");
+            }
+        }
+        printNMatrix2(arr, step + 1, mx, my);
+    }
     /**
      * 打印第n圈的二维数组
      * @param numbers

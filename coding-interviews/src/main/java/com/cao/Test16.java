@@ -18,7 +18,7 @@ public class Test16 {
      * @param head 链表的头结点
      * @return 反转后的链表的头结点
      */
-    public static ListNode reverseList(ListNode head) {
+    public static ListNode reverseList1(ListNode head) {
         if (head == null || head.next == null) {
             return head;
         }
@@ -38,6 +38,38 @@ public class Test16 {
         return newHead;
     }
 
+    /**
+     * 递归方法，脑子总是迷糊，递归还是学的不好
+     a->b->c->d->e
+     方法执行：
+        f(b)
+            f(c)
+                f(d) = e
+                    a->b->c->d<-e
+                    这个地方需要改变d的方向了
+                        d.next.next = d
+                        a->b->c<-d<-e
+                这个地方需要改变c的方向了
+                    c.next.next = c
+                    a->b->c<-d<-e
+            这个时候需要改变b的方向了
+                b.next.next = b
+                a->b<-c<-d<-e
+        这个时候需要改变a的方向了
+            a.next.next = a
+            a<-b<-c<-d<-e
+        return e;
+     */
+    public static ListNode reverseList(ListNode head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+        ListNode newHead = reverseList(head.next);
+        newHead.next = head;
+        head.next.next = head;
+        head.next = null;
+        return newHead;
+    }
     /**
      * 输出链表的元素值
      *

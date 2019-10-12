@@ -61,11 +61,11 @@ public class Test10 {
     }
 
     public static void main(String[] args) {
-        System.out.println(numberOfOne(0)); // 0
-        System.out.println(numberOfOne(1)); // 1
-        System.out.println(numberOfOne(-1)); // -1
-        System.out.println(numberOfOne(Integer.MAX_VALUE)); // Integer.MAX_VALUE
-        System.out.println(numberOfOne(Integer.MIN_VALUE)); // Integer.MIN_VALUE
+        System.out.println(numberOfOne(0) == 0);
+        System.out.println(numberOfOne(1) == 1);
+        System.out.println(numberOfOne(-1) == 32);
+        System.out.println(numberOfOne(Integer.MAX_VALUE) == 31);
+        System.out.println(numberOfOne(Integer.MIN_VALUE) == 1);
         System.out.println();
 
         System.out.println(getLineNum("A"));

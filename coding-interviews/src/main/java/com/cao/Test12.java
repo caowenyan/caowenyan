@@ -92,6 +92,7 @@ public class Test12 {
     }
 
     private static void printInts(int[]chars) {
+        // 这个主要是为了看是否真的有值，因为存在0。。。0的情况，不需要打印
         boolean start = false;
         for (int c : chars) {
             if (!start && c != 0) {
