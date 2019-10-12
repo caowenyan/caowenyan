@@ -29,6 +29,17 @@ package com.jvm.bytes.code;
     istore n：把操作数栈顶的元素移动到局部变量表索引为n的位置，等同于iload n
     iload_n：把局部变量表中索引为n的值压入到操作数栈顶
     iadd：将操作数栈顶的元素弹出两个相加，然后将结果压入栈顶
+
+    pop2：将栈顶的一个（占8个字节）或者2个元素弹出
+ */
+
+/**
+ 现在把test方法复制一份修改为long类型，变化
+ stack由2->4
+ locals由6->11
+ LocalVariableTable中slot的值long类型的也增加了1.
+
+ 由此可见类型的重要性。
  */
 public class MyTest9 {
     public int test() {
@@ -40,7 +51,23 @@ public class MyTest9 {
         return result;
     }
 
+    public long testLong() {
+        long a = 1;
+        long b = 10;
+        long c = 100;
+        long d = 100000;
+        long result = (a + b - c) * d;
+        return result;
+    }
+
     public static void main(String[] args) {
+        // 执行完test之后会把返回值压入到栈顶，但是此次没有保存，所以多了pop命令将返回值出栈
         new MyTest9().test();
+        new MyTest9().testLong();
+        MyTest9 myTest9 = new MyTest9();
+        int i1 = myTest9.test();
+        long l1 = myTest9.testLong();
+        System.out.println(i1);
+        System.out.println(l1);
     }
 }
