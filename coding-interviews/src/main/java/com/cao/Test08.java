@@ -9,11 +9,12 @@ import org.junit.Assert;
  * @date 2019年09月17日 17:27
  */
 public class Test08 {
+
     /**
      * 把一个数组最开始的若干个元素搬到数组的末尾， 我们称之数组的旋转。
      * 输入一个递增排序的数组的一个旋转，输出旋转数组的最小元素。
      * 例如数组{3, 4, 5, 1, 2｝为｛l ,2, 3, 4, 5}的一个旋转，该数组的最小值为
-     *
+     * 最简单的例子，依次遍历，根据选择的特点去找到拐点，时间复杂度是O（n）
      * @param numbers 旋转数组
      * @return 数组的最小值
      */
@@ -21,33 +22,23 @@ public class Test08 {
         if (numbers == null || numbers.length == 0) {
             throw new RuntimeException("Invalid input.");
         }
-        int start = 0;
-        int end = numbers.length - 1;
-        int mid = 0;
-        while (end - start > 1) {
-            mid = (start + end) >> 1;
-            // 这个是特例，例如 1..1.0...1..1，这个就不好判断中间是不是有其他的元素，只好遍历了。
-            // 这个是个盲区，需要特别注意
-            if (numbers[end] == numbers[start] && numbers[start] == numbers[mid]) {
-                return minInorder(numbers, start, end);
-            }
-            if (numbers[end] >= numbers[mid]) {
-                end = mid;
-            } else if (numbers[end] < numbers[mid]) {
-                start = mid;
-            } else if (numbers[start] >= numbers[mid]) {
-                end = mid;
-            } else {
-                start = mid;
-            }
-            if (numbers[end] >= numbers[mid]) {
-                end = mid;
-            } else if (numbers[start] <= numbers[mid]) {
-                start = mid;
+        //反转点的索引
+        int index = 0;
+        for (int i = 1 ; i < numbers.length ;i ++) {
+            if (numbers[i - 1] > numbers[i]) {
+                index = i;
+                break;
             }
         }
-        // 处理全都是递增子序列的情况
-        return (numbers[start] > numbers[end]? numbers[end]:numbers[start]);
+        if (index == 0) {
+            return numbers[index];
+        }
+        for (int i = index + 1; i < numbers.length; i ++) {
+            if (numbers[i-1] > numbers[i] || numbers[0] < numbers[i]) {
+                throw new RuntimeException("Invalid input.");
+            }
+        }
+        return numbers[index];
     }
 
     /**
