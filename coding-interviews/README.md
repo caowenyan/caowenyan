@@ -37,6 +37,7 @@
 36. [数组中逆序对的个数](src/main/java/com/cao/Test36.java)  
 37. [两个单向链表的第一个公共节点](src/main/java/com/cao/Test37.java)  
 38. [数字在排列数组中出现的次数](src/main/java/com/cao/Test38.java)  
+39. [二叉树的深度 + 判断二叉树是否是平衡二叉树](src/main/java/com/cao/Test39.java)  
 
 
 ## 全排列  
