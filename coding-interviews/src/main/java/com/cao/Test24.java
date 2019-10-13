@@ -26,7 +26,7 @@ public class Test24 {
             return true;
         }
         int midValue = sequence[end];
-        // 特别注意他是属于右子树第一个节点
+        // 特别注意他是属于右子树第一个节点，比如特殊情况34561，所以是从左子树计算到右子树的第一个节点
         int split = start;
         while (sequence[split] < midValue && split <= end) {
             split ++;
@@ -54,7 +54,7 @@ public class Test24 {
         //       /\     /\
         //      4  8  12  16
         int[] data = {4, 8, 6, 12, 16, 14, 10};
-        System.out.println("true: " + verifySequenceOfBST(data));
+        System.out.println(true == verifySequenceOfBST(data));
 
         //           5
         //          / \
@@ -62,7 +62,7 @@ public class Test24 {
         //            /
         //           6
         int[] data2 = {4, 6, 7, 5};
-        System.out.println("true: " + verifySequenceOfBST(data2));
+        System.out.println(true == verifySequenceOfBST(data2));
 
         //               5
         //              /
@@ -74,7 +74,7 @@ public class Test24 {
         //        /
         //       1
         int[] data3 = {1, 2, 3, 4, 5};
-        System.out.println("true: " + verifySequenceOfBST(data3));
+        System.out.println(true == verifySequenceOfBST(data3));
 
         // 1
         //  \
@@ -86,16 +86,16 @@ public class Test24 {
         //        \
         //         5
         int[] data4 = {5, 4, 3, 2, 1};
-        System.out.println("true: " + verifySequenceOfBST(data4));
+        System.out.println(true == verifySequenceOfBST(data4));
 
         // 树中只有1个结点
         int[] data5 = {5};
-        System.out.println("true: " + verifySequenceOfBST(data5));
+        System.out.println(true == verifySequenceOfBST(data5));
 
         int[] data6 = {7, 4, 6, 5};
-        System.out.println("false: " + verifySequenceOfBST(data6));
+        System.out.println(false ==  verifySequenceOfBST(data6));
 
         int[] data7 = {4, 6, 12, 8, 16, 14, 10};
-        System.out.println("false: " + verifySequenceOfBST(data7));
+        System.out.println(false == verifySequenceOfBST(data7));
     }
 }

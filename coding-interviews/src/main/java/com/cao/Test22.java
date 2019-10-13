@@ -45,19 +45,9 @@ public class Test22 {
                 value = stack.peek();
             }
         }
+        // 既然是两者元素相等，若是等于最大值，则表示所有元素出栈，符合题意，否则表示有元素未出栈，不符合题意
         if (popIndex == pop.length) {
             return true;
-        }
-        if (stack.isEmpty()) {
-            return false;
-        }
-        if (!stack.isEmpty()) {
-            while (popIndex < pop.length && !stack.isEmpty() && pop[popIndex] == stack.pop()) {
-                popIndex ++;
-            }
-            if (stack.isEmpty() && popIndex == pop.length) {
-                return true;
-            }
         }
         return false;
     }
@@ -105,29 +95,29 @@ public class Test22 {
         int[] pop3 = {4, 3, 5, 1, 2};
         int[] pop4 = {3, 5, 4, 1, 2};
 
-        System.out.println("true: " + isPopOrder(push, pop1));
-        System.out.println("true: " + isPopOrder(push, pop2));
-        System.out.println("false: " + isPopOrder(push, pop3));
-        System.out.println("false: " + isPopOrder(push, pop4));
+        System.out.println(true == isPopOrder(push, pop1) );
+        System.out.println(true == isPopOrder(push, pop2));
+        System.out.println(false == isPopOrder(push, pop3));
+        System.out.println(false == isPopOrder(push, pop4));
 
         int[] push5 = {1};
         int[] pop5 = {2};
-        System.out.println("false: " + isPopOrder(push5, pop5));
+        System.out.println(false == isPopOrder(push5, pop5));
 
         int[] push6 = {1};
         int[] pop6 = {1};
-        System.out.println("true: " + isPopOrder(push6, pop6));
+        System.out.println(true == isPopOrder(push6, pop6));
 
-        System.out.println("false: " + isPopOrder(null, null));
+        System.out.println(false == isPopOrder(null, null));
 
         // 测试方法2
         System.out.println();
-        System.out.println("true: " + isPopOrder2(push, pop1));
-        System.out.println("true: " + isPopOrder2(push, pop2));
-        System.out.println("false: " + isPopOrder2(push, pop3));
-        System.out.println("false: " + isPopOrder2(push, pop4));
-        System.out.println("false: " + isPopOrder2(push5, pop5));
-        System.out.println("true: " + isPopOrder2(push6, pop6));
-        System.out.println("false: " + isPopOrder2(null, null));
+        System.out.println(true == isPopOrder2(push, pop1));
+        System.out.println(true == isPopOrder2(push, pop2));
+        System.out.println(false == isPopOrder2(push, pop3));
+        System.out.println(false == isPopOrder2(push, pop4));
+        System.out.println(false == isPopOrder2(push5, pop5));
+        System.out.println(true == isPopOrder2(push6, pop6));
+        System.out.println(false == isPopOrder2(null, null));
     }
 }

@@ -12,7 +12,7 @@ import java.util.List;
 public class Test30 {
 
     /**
-     * 题目： 输入n个整数，找出其中最小的k个数。
+     * 题目： 输入n个整数，找出其中最小的k个数。例如{4, 5, 1, 6, 2, 7, 2, 8}最小的2个数字是(1,2)
      * 【第一种解法】利用快速排序的思想，改变了数组中原有元素的位置
      * @param input  输入数组
      * @param output 输出数组
@@ -61,8 +61,10 @@ public class Test30 {
         arr[j] = temp;
     }
     /**
-     * 大顶堆
+     * 大顶堆,利用把最大的元素删除剩下的就是最小的n个元素
      *
+     * 开始还想利用小顶堆，先放入n个元素，然后比较堆和其他的元素，发现有问题
+     * 比较小顶堆是最小的元素，次小的不知道，不能这么比较
      * @param <T> 参数化类型
      */
     private final static class MaxHeap<T extends Comparable<T>> {
