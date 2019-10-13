@@ -20,34 +20,15 @@ public class Test40 {
         for (int obj : data) {
             temp ^= obj;
         }
-        // 从后向前找到第一个索引位置不为1，按照此索引位将数据分为两组。
+        // 从后向前找到第一个索引位置不为1，按照此索引位将数据分为两组。这个地方没必要真的分成两组，理论上分为两组就好了
         int lastIndexOf1 = getLastIndexOf1(temp);
 
-        // 分成两种，前面是数字某个二进制位为0的，后面是某个二进制位不为0的
-        int start = 0 , end = data.length - 1 ;
-        while (start < end) {
-            while (start < end && ((data[start] >> lastIndexOf1 ) & 1) == 0) {
-                start++;
+        for (int obj : data) {
+            if (((obj >> lastIndexOf1) & 1) == 0) {
+                result[0] ^= obj;
+            } else {
+                result[1] ^= obj;
             }
-            while (start < end && ((data[end] >> lastIndexOf1 ) & 1) != 0) {
-                end --;
-            }
-            if (start < end) {
-                swap(data, start, end);
-            }
-        }
-        if (((data[start] >> lastIndexOf1 ) & 1) != 0) {
-            start --;
-        }
-        if (((data[end] >> lastIndexOf1 ) & 1) == 0) {
-            end --;
-        }
-        for (int i = 0; i <= start; i ++) {
-            result[0] ^= data[i];
-        }
-
-        for (int i = end; i < data.length; i ++) {
-            result[1] ^= data[i];
         }
         return result;
     }
