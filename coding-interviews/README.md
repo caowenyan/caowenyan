@@ -1,42 +1,42 @@
 ## 剑指offer中的题目
-...
-1.
-2.
-3.
-4.
-5.
-6.
-7.
-8.
-9.
-10.
-11.
-12.
-13.
-14.
-15.
-16.
-17.
-18.
-19.
-20.
-21.
-22.
-23.
-24.
-25.
-26.
-27.
-28.
-29.
-30.
-31.
-32.
-33.
-34.
-35.
-36. [数组中逆序对的个数](src/main/java/com/cao/Test36.java)
-37. [两个单向链表的第一个公共节点](src/main/java/com/cao/Test37.java)
+1. [](src/main/java/com/cao/Test.java)  
+2. [](src/main/java/com/cao/Test.java)  
+3. [](src/main/java/com/cao/Test.java)  
+4. [](src/main/java/com/cao/Test.java)  
+5. [](src/main/java/com/cao/Test.java)  
+6. [](src/main/java/com/cao/Test.java)  
+7. [](src/main/java/com/cao/Test.java)  
+8. [](src/main/java/com/cao/Test.java)  
+9. [](src/main/java/com/cao/Test.java)  
+10. [](src/main/java/com/cao/Test.java)  
+11. [](src/main/java/com/cao/Test.java)  
+12. [](src/main/java/com/cao/Test.java)  
+13. [](src/main/java/com/cao/Test.java)  
+14. [](src/main/java/com/cao/Test.java)  
+15. [](src/main/java/com/cao/Test.java)  
+16. [](src/main/java/com/cao/Test.java)  
+17. [](src/main/java/com/cao/Test.java)  
+18. [](src/main/java/com/cao/Test.java)  
+19. [](src/main/java/com/cao/Test.java)  
+20. [](src/main/java/com/cao/Test.java)  
+21. [](src/main/java/com/cao/Test.java)  
+22. [](src/main/java/com/cao/Test.java)  
+23. [](src/main/java/com/cao/Test.java)  
+24. [](src/main/java/com/cao/Test.java)  
+25. [](src/main/java/com/cao/Test.java)  
+26. [](src/main/java/com/cao/Test.java)  
+27. [](src/main/java/com/cao/Test.java)  
+28. [](src/main/java/com/cao/Test.java)  
+29. [数组中出现超过一半的数字](src/main/java/com/cao/Test29.java)  
+30. [最小的k个数字](src/main/java/com/cao/Test.java)  
+31. [连续子数组的最大和](src/main/java/com/cao/Test31.java)  
+32. [](src/main/java/com/cao/Test.java)  
+33. [](src/main/java/com/cao/Test.java)  
+34. [求第n个丑数（丑数是只含有因子2、3、5的数）](src/main/java/com/cao/Test34.java)  
+35. [字符串中只出现一次的第一个字符](src/main/java/com/cao/Test35.java)
+36. [数组中逆序对的个数](src/main/java/com/cao/Test36.java)  
+37. [两个单向链表的第一个公共节点](src/main/java/com/cao/Test37.java)  
+38. [数字在排列数组中出现的次数](src/main/java/com/cao/Test38.java)  
 
 
 ## 全排列  
