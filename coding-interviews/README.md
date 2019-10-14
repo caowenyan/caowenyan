@@ -46,8 +46,10 @@
 45. [圆圈里最后剩下的数字](src/main/java/com/cao/Test45.java)  
 46. [求1+2+3+ ... +n，不能使用乘除法、for、while、if
 、else、switch等关键词和条件判断语句（很巧妙）](src/main/java/com/cao/Test46.java) 
-47. [不用加减乘除做加法](src/main/java/com/cao/Test47.java)    
-
+47. [不用加减乘除做加法](src/main/java/com/cao/Test47.java)   
+48. [](src/main/java/com/cao/Test48.java)   
+49. [把一个字符串转化为整数](src/main/java/com/cao/Test49.java)   
+50. [](src/main/java/com/cao/Test50.java)   
 
 ## 全排列  
 
