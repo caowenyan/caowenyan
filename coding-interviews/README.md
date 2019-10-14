@@ -41,6 +41,8 @@
 40. [数组中只出现过一次的2个数字，其他数字都是成对出现的](src/main/java/com/cao/Test40.java)  
 41. [和为s的两个数字在有序数组中连续数字 + 和为s的连续证书序列（至少两个数）](src/main/java/com/cao/Test41.java)  
 42. [旋转单词顺序 + 左旋转字符串](src/main/java/com/cao/Test42.java)  
+43. [](src/main/java/com/cao/Test43.java)  
+44. [判断5张扑克牌是否是顺子](src/main/java/com/cao/Test44.java)  
 
 
 ## 全排列  
