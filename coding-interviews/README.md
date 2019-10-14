@@ -44,6 +44,8 @@
 43. [](src/main/java/com/cao/Test43.java)  
 44. [判断5张扑克牌是否是顺子](src/main/java/com/cao/Test44.java)  
 45. [圆圈里最后剩下的数字](src/main/java/com/cao/Test45.java)  
+46. [求1+2+3+ ... +n，不能使用乘除法、for、while、if
+、else、switch等关键词和条件判断语句（很巧妙）](src/main/java/com/cao/Test46.java)  
 
 
 ## 全排列  
