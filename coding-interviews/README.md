@@ -39,6 +39,7 @@
 38. [数字在排列数组中出现的次数](src/main/java/com/cao/Test38.java)  
 39. [二叉树的深度 + 判断二叉树是否是平衡二叉树](src/main/java/com/cao/Test39.java)  
 40. [数组中只出现过一次的2个数字，其他数字都是成对出现的](src/main/java/com/cao/Test40.java)  
+41. [和为s的两个数字在有序数组中连续数字 + 和为s的连续证书序列（至少两个数）](src/main/java/com/cao/Test40.java)  
 
 
 ## 全排列  
