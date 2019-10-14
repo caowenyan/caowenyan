@@ -43,6 +43,7 @@
 42. [旋转单词顺序 + 左旋转字符串](src/main/java/com/cao/Test42.java)  
 43. [](src/main/java/com/cao/Test43.java)  
 44. [判断5张扑克牌是否是顺子](src/main/java/com/cao/Test44.java)  
+45. [圆圈里最后剩下的数字](src/main/java/com/cao/Test45.java)  
 
 
 ## 全排列  
