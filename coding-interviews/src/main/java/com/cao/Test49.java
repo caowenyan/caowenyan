@@ -54,9 +54,17 @@ public class Test49 {
         return (int)sum;
     }
     public static void main(String[] args) {
+        System.out.println(Integer.valueOf("02"));
+        System.out.println(Integer.valueOf("0002"));
+        System.out.println(Integer.valueOf("12"));
+        System.out.println(Integer.valueOf("-12"));
+        System.out.println(Integer.valueOf("+12"));
+        System.out.println(Integer.valueOf("+2147483648"));
+
         System.out.println(stringToInt("123"));
         System.out.println(stringToInt("+123"));
         System.out.println(stringToInt("-123"));
+        System.out.println(stringToInt("-00100"));
         System.out.println(stringToInt("+2147483647"));
         System.out.println(stringToInt("-2147483647"));
         System.out.println(stringToInt("-2147483648"));
