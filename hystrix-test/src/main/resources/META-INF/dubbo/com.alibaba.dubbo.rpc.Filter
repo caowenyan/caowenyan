@@ -1,0 +1,5 @@
+hystrix=com.cloudyoung.common.wx.hystrix.HystrixFilter
+#braveConsumerFilter=com.cloudyoung.common.wx.brave.DrpcClientInterceptor
+#braveProviderFilter=com.cloudyoung.common.wx.brave.DrpcServerInterceptor
+#braveConsumerFilter=com.cloudyoung.common.wx.brave.BraveConsumerFilter
+#braveProviderFilter=com.cloudyoung.common.wx.brave.BraveProviderFilter

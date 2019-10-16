@@ -65,7 +65,6 @@ public class Test16 {
             return head;
         }
         ListNode newHead = reverseList(head.next);
-        newHead.next = head;
         head.next.next = head;
         head.next = null;
         return newHead;
