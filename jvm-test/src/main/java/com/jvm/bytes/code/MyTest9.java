@@ -61,7 +61,12 @@ public class MyTest9 {
     }
 
     public static void main(String[] args) {
+        String s = "Fdsfsdfsfs";
+        Integer i = 123;
+        Integer i01 = 1023;
         // 执行完test之后会把返回值压入到栈顶，但是此次没有保存，所以多了pop命令将返回值出栈
+        MyTest9 testNull;
+        testNull = null;
         new MyTest9().test();
         new MyTest9().testLong();
         MyTest9 myTest9 = new MyTest9();

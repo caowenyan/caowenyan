@@ -6,13 +6,19 @@ package com.cao;
  注意：这里指的是将常量存到到了MyTest2的常量池中，之后MyTest2和MyParent2就没有任何联系了 
  甚至，我们可以将MyParent2的class文件删除（编译完之后运行之前可以删除）
  */
+/**
+ * 这里注意final类型的针对基本类型和string类型，基本类型的装箱类型不可以
+ */
 public class MyTest2 {
     public static void main(String[] args) {
-        System.out.println(MyChild2.finalStr);
+        System.out.println(MyChild2.finalInt);
+//        System.out.println(MyChild2.finalStr);
     }
 }
 class MyParent2 {
+    public static final Integer finalInt = 1;
     public static final String finalStr = "my parent 1 -- final";
+    public static final boolean finalBool = true;
     static {
         System.out.println("my parent static block");
     }

@@ -11,13 +11,15 @@ package com.cao;
  */
 public class MyTest1 {
     public static void main(String[] args) {
-        System.out.println(MyChild1.parent);
+        System.out.println(MyChild1.parentInt);
+//        System.out.println(MyChild1.parent);
 //        System.out.println(MyChild1.son);
     }
 }
 
 class MyParent1 {
     public static String parent = "my parent1 static field";
+    public static Integer parentInt = 1;
     static {
         System.out.println("my parent static block");
     }

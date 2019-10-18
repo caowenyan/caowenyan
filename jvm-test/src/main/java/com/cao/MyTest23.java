@@ -19,7 +19,7 @@ import sun.misc.Launcher;
 
  */
 public class MyTest23 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         System.out.println("boot class loader: " + System.getProperty("sun.boot.class.path"));
         System.out.println();
         System.out.println("ext class loader: " + System.getProperty("java.ext.dirs"));
@@ -45,10 +45,13 @@ public class MyTest23 {
         System.out.println(Launcher.class.getClassLoader());
 
         System.out.println(ClassLoader.getSystemClassLoader());
+        // 本来打算设置自定义的类加载器路径，然后加载不在classes下的文件，但是报错了，因为加载当前类的是系统类加载器，不能向下加载
+//        MyClassLoader classLoader = (MyClassLoader) ClassLoader.getSystemClassLoader();
+//        classLoader.setPath("/Users/caowenyan/Desktop/");
 
         System.out.println("-------------");
 
-        System.out.println(System.getProperty("java.system.class.loader"));
+        System.out.println("java.system.class.loader: " + System.getProperty("java.system.class.loader"));
 
         System.out.println(MyTest23.class.getClassLoader());
         System.out.println(MyClassLoader.class.getClassLoader());
