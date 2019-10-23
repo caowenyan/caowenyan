@@ -19,11 +19,25 @@ public class Test47 {
         }
         return add((a&b)<<1,a^b);
     }
+    public static int add2(int a ,int b) {
+        if (b  == 0) {
+            return a;
+        }
+        if (a  == 0) {
+            return b;
+        }
+        while (a != 0) {
+            int tmp = a ^ b;
+            a = (a & b) << 1;
+            b = tmp;
+        }
+        return b;
+    }
 
     public static void main(String[] args) {
-        System.out.println(add(1, 2)  == (1 + 2));
-        System.out.println(add(13, 34) == (13 + 34));
-        System.out.println(add(19, 95) == (19 + 95));
-        System.out.println(add(865, 245) == (865 + 245));
+        System.out.println(add2(1, 2)  == (1 + 2));
+        System.out.println(add2(13, 34) == (13 + 34));
+        System.out.println(add2(19, 95) == (19 + 95));
+        System.out.println(add2(865, 245) == (865 + 245));
     }
 }

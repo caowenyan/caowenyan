@@ -40,7 +40,7 @@ public class NextMinPermutation {
 
     /**
      * 将逆序异常的第一位与逆序区域的（比index-1的值大一点）的最小值交互
-     * 毕竟是逆序，所以最小的肯定最后一位
+     * 毕竟是逆序，所以最小的肯定最后一位，找到比需要移除的位大一位的数字
      */
     private static void exchangeHead(int[] arr, int index) {
         for (int i = arr.length - 1 ; i > 0; i --) {

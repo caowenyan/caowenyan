@@ -48,7 +48,7 @@ public class Test45 {
      * x: 0,.....n-k-2,n-k-1,n-k....n-2
      * y: k+1,...n-1,0,1...k-1
      * y(x) = (k + 1 + x )%n
-     * f(n,m)=f'(n-1,m)=[k+1+f(n-1,m)]%n=[m+f(n-1,m]%n
+     * f(n,m)=f'(n-1,m)=[k+1+f(n-1,m)]%n=[m+f(n-1,m)]%n
      */
     public static int lastRemaining(int n, int m) {
         if (n < 1 || m < 1) {

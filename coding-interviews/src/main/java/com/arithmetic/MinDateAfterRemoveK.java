@@ -34,6 +34,7 @@ public class MinDateAfterRemoveK {
             }
             stack.add(num.charAt(i));
         }
+        // 若是字符串是正序的，删除最后的数字即可
         if (k > remove) {
             while (k > remove) {
                 stack.pop();

@@ -8,9 +8,9 @@ package com.cao.classics;
  */
 public class QuickSort {
     public static void main(String[] args) {
-        int arr[] = { 4, 1, 3, 2, 7, 6, 8};
-//        int arr[] = { 1, 2, 3, 4, 6, 7, 8 };
-//        int arr[] = { 8, 7, 6, 4, 3, 2, 1 };
+//        int arr[] = { 4, 1, 3, 2, 7, 6, 8};
+//        int arr[] = { 1, 2, 3,  4, 6, 7, 8 };
+        int arr[] = { 8, 7, 6, 4, 3, 2, 1 };
         quickSort(arr);
         for (int i : arr) {
             System.out.print(i + " ");
@@ -58,8 +58,7 @@ public class QuickSort {
                 swap(arr, left, right);
             }
         }
-        // 注意此处不能同left，因为left是自增的，有可能大于right，导致越界
-        swap(arr, L, right);
+        swap(arr, L, left);
         return right;
     }
 

@@ -52,7 +52,7 @@ public class Test38 {
         if (data[start] > k || start == end) {
             return -1;
         }
-        // 开始落了data[start]<k，导致死循环了
+        // 开始落了data[start]<k，导致死循环了,这个主要处理start=k的情况
         while (start <= end && data[start] < k) {
             int middle = (start + end) >> 1;
             if (data[middle] < k) {
