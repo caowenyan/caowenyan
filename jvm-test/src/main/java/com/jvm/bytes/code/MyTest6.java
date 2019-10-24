@@ -14,7 +14,7 @@ package com.jvm.bytes.code;
 /**
  1.invokeinterface：调用接口中的方法，实际上是在运行期决定的，决定到底调用实现该接口的那个对象的特定方法。
  2.invokestatic：调用静态方法。
- 3.invokespecial：调用子自己的私有方法、构造方法（<init>）以及父类的方法
+ 3.invokespecial：调用子类自己的私有方法、构造方法（<init>）以及父类的方法（super(),super.method()）
  4.invokevirtual：调用虚方法，运行期动态查找的方法。
  5.invokedynamic：动态调用方法
 
@@ -23,8 +23,9 @@ package com.jvm.bytes.code;
  2.父类方法
  3.构造方法
  4.私有方法（无法被重写）
+ 5.final方法
 
- 以上4类方法被称作非虚方法，他们是在类加载阶段就可以将符号引用转化为直接引用的
+ 以上5类方法被称作非虚方法，他们是在类加载阶段就可以将符号引用转化为直接引用的
  */
 public class MyTest6 {
     /**

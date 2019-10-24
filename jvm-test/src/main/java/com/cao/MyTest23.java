@@ -37,7 +37,7 @@ public class MyTest23 {
          所有类加载器（除了启动类加载器）都被实现为Java类。不过，总归要有一个组件来加载第一个Java类加载器，从而使整个加载过程能够顺利的
          进行下去，加载第一个纯Java类加载器就是启动类加载器的职责。
 
-         启动类加载器还会负责加载供JRE征程云霞所需要的基本组件，这包括java.lang与java.util包中的类等等。
+         启动类加载器还会负责加载供JRE下的所需要的基本组件，这包括java.lang与java.util包中的类等等。
          */
         System.out.println(ClassLoader.class.getClassLoader());
 

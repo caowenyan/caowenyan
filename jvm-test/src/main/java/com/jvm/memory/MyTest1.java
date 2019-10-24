@@ -1,8 +1,5 @@
 package com.jvm.memory;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * @author 曹文艳   (caowy@cloud-young.com)
  * @version V1.0
@@ -14,6 +11,7 @@ public class MyTest1 {
         String string = new StringBuilder().append("发顺丰").append("发送").toString();
         System.out.println(string == string.intern());
 
+        // 这个是因为java是比较常用的，在常量池中存在
         String string1 = new StringBuilder().append("ja").append("va").toString();
         System.out.println(string1 == string1.intern());
 

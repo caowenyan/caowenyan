@@ -4,7 +4,7 @@ package com.cao;
  ldc：表示将int，float，或是string类型的常量值从常量池中推至栈顶 
  bipush：表示将单个字节（-128~127）的常量值推至到栈顶 
  sipush：表示将一个短整型常量值（-32768~32767）推送到栈顶 
- iconst_1：表示将int类型的1推至到栈顶（-1~5）
+ iconst_1：表示将数字类型（不限于int，可以是short等）的1推至到栈顶（-1~5）
  */
 public class MyTest3 {
     public static void main(String[] args) {

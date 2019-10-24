@@ -13,9 +13,10 @@ public class MyTest10 {
     int a = 1;
 
     /**
-     * 注意这个地方有局部变量表重复利用的情况
+     * 注意局部变量除了有局部变量表重复利用的情况，也会存在一个变量被复制到好多个slot
+     * 主要是因为return的时候需要把变量存储到某个slot中，然后执行final，最后返回在return前存储的slot
      * 所以在localVariableTable中有很多相同的slot
-     * 在final语句中，先把x所在的引用在复制一份存储到新的slot中
+     * 在final语句中，先把x所在的值再复制一份存储到新的slot中
      * @return
      */
     public int inc() {
@@ -29,13 +30,14 @@ public class MyTest10 {
         } finally {
             x = 3;
             // 若是加上下面的语句，则返回的就是下面的x而不是try语句中的x
-            // return x;
+            //return x;
         }
     }
 
     public String inc1() {
         StringBuilder x = new StringBuilder();
         try {
+            // 在执行完这一行的时候有个pop，说明没有介绍append返回值
             x.append("1");
             return x.toString();
         } catch (Exception e) {
@@ -75,6 +77,7 @@ public class MyTest10 {
         return "[a = " + a +"]";
     }
 
+    // 查看内部类
     class InnerCls {
         char aChar;
     }

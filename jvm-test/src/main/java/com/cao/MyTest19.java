@@ -18,8 +18,8 @@ import com.sun.crypto.provider.AESKeyGenerator;
  */
 public class MyTest19 {
     public static void main(String[] args) throws Exception {
+        System.out.println(MyTest19.class.getClassLoader());
         AESKeyGenerator generator = new AESKeyGenerator();
         System.out.println(generator.getClass().getClassLoader());
-        System.out.println(MyTest19.class.getClassLoader());
     }
 }

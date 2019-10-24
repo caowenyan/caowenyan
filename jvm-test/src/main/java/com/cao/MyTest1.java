@@ -21,12 +21,12 @@ class MyParent1 {
     public static String parent = "my parent1 static field";
     public static Integer parentInt = 1;
     static {
-        System.out.println("my parent static block");
+        System.out.println("my parent1 static block");
     }
 }
 class MyChild1 extends MyParent1 {
-    public static String son = "my parent1 static field";
+    public static String son = "my child1 static field";
     static {
-        System.out.println("my parent static block");
+        System.out.println("my child1 static block");
     }
  }
