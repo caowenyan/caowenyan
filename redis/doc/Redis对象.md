@@ -62,25 +62,25 @@ embstr编码的字符串的好处：
 
 编码转换：int编码的字符串和embstr编码的字符串对象在条件满足的情况加，会被转化为raw编码的字符串对象。
     
-### <span id="list">列表对象</span
+### <span id="list">列表对象</span>
 + ziplist：需要满足以下两个条件（这个条件也可以通过修改配置list-max-ziplist-value和list-max-ziplist-entries）
     + 列表对象保存的所有字符串元素的长度都小于64字节
     + 列表元素保存的元素数量小于512
 + linkedlist：不满足ziplist的条件则编码会转化为linkedlist
 
-### <span id="hash">哈希对象</span
+### <span id="hash">哈希对象</span>
 + ziplist：key和value分别推入压缩链表的表尾，存储条件（这个条件也可以通过修改配置hash-max-ziplist-value和hash-max-ziplist-entries）
     + 哈希对象保存的所有键值对的键和值的字符串长度都小于64字节
     + 哈希对象保存的键值对数量小于512（注意是键值对数量）
 + hashtable：
 
-### <span id="set">集合对象</span
+### <span id="set">集合对象</span>
 + intset：存储条件（这个条件也可以通过修改配置set-max-intset-value和set-max-intset-entries）
     + 集合对象保存的所有元素都是整数值
     + 集合对象保存的元素数量小于512
 + hashtable：
 
-### <span id="zset">有序集合对象</span
+### <span id="zset">有序集合对象</span>
 + ziplist：存储条件（这个条件也可以通过修改配置zset-max-ziplist-value和zset-max-ziplist-entries）
     + 有序集合对象保存的所有键值对的键和值的字符串长度都小于64字节
     + 有序集合对象保存的键值对数量小于512（注意是键值对数量）
