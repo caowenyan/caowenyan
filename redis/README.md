@@ -27,5 +27,8 @@
 2. [自动间隔性保存](doc/RDB持久化.md#自动间隔性保存)
 3. [RDB文件结构](doc/RDB持久化.md#RDB文件结构)
 
-
+### AOF持久化
+1. [AOF持久化的实现](doc/AOF持久化.md#AOF持久化的实现)
+2. [AOF文件的载入与数据还原](doc/AOF持久化.md#AOF文件的载入与数据还原)
+3. [AOF重写](doc/AOF持久化.md#AOF重写)
 
