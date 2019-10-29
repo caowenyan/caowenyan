@@ -86,7 +86,7 @@ embstr编码的字符串的好处：
     + 有序集合对象保存的键值对数量小于512（注意是键值对数量）
 + skiplist：
 
-将ziplist/skiplist和hashtable结合起来使用，ziplist/skiplist使用成员、分值依次存储，hashtable存储成员、分值、这样可以通过O(1)的复杂度获取给定成员的分值。
+将skiplist和hashtable结合起来使用，skiplist使用成员、分值依次存储，hashtable存储成员、分值、这样可以通过O(1)的复杂度获取给定成员的分值。
 
 ### 类型检查与命令多态
 redis会根据值对象的类型来判断键是否能够执行指定命令，还会根据值对象的编码方式，选择正确的命令实现代码来执行命令。
