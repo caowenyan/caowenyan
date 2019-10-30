@@ -5,8 +5,10 @@
     [3. 哈希对象：REDIS_HASH](#hash)  
     [4. 集合对象：REDIS_SET](#set)  
     [5. 有序集合对象：REDIS_ZSET](#zset)  
+    
  每种对象都用到至少一种的数据结构，对象的结构为(通过type+encoding极大地提高了redis的灵活性和效率)：
  ```
+ // redisObject应该只有这五种属性
  typedef struct redisObject {
     // 类型，指的是5种对象，查看此类型：TYPE key
     unsigned type:4;
@@ -46,7 +48,7 @@ REDIS_ZSET  -
 ```
 
 ### <span id="string">字符串对象</span>
-+ int：整数且可以用long类型表示的，会将字符串保存在对象中的ptr属性里面（将void*设置为long），encoding设置为int，所以这个和字符串数据结构没有关系
++ int：整数且可以用long类型表示的，会将字符串保存在对象中的ptr属性里面（将void*设置为long），encoding设置为int，**所以这个和字符串数据结构没有关系**
 + embstr：字符串的长度小于32字节
 + raw：保存的是字符串值，且字符串长度大于32字节
 
@@ -60,7 +62,7 @@ embstr编码的字符串的好处：
 
 浮点数也是按照字符串对象存储的，在需要的时候，程序会将字符串对象里面的字符串值转化为浮点数，执行某些操作，然后再执行操作所得浮点数值转回字符串值，继续保存在字符串对象里面。
 
-编码转换：int编码的字符串和embstr编码的字符串对象在条件满足的情况加，会被转化为raw编码的字符串对象。
+**编码转换**：int编码的字符串和embstr编码的字符串对象在条件满足的情况加，会被转化为raw编码的字符串对象。
     
 ### <span id="list">列表对象</span>
 + ziplist：需要满足以下两个条件（这个条件也可以通过修改配置list-max-ziplist-value和list-max-ziplist-entries）
@@ -85,7 +87,12 @@ embstr编码的字符串的好处：
     + 有序集合对象保存的所有键值对的键和值的字符串长度都小于64字节
     + 有序集合对象保存的键值对数量小于512（注意是键值对数量）
 + skiplist：
-
+```
+typedef struct zset {
+    skiplist *zsl;
+    dict *dict;
+}
+```
 将skiplist和hashtable结合起来使用，skiplist使用成员、分值依次存储，hashtable存储成员、分值、这样可以通过O(1)的复杂度获取给定成员的分值。
 
 ### 类型检查与命令多态
@@ -107,8 +114,7 @@ redis会根据值对象的类型来判断键是否能够执行指定命令，还
 + redis只对包含整数值的字符串对象进行共享，因为字符串值的字符串对象进行验证操作的复杂度是O(N)，列表对象的验证的操作复杂度是O(n^2)
 
 ### 对象的空转时长
-object idletime 命令是特殊的，这个命令在访问键的值对象时，不会修改值对象的lru属性
-
+object idletime 求得空转时长，通过当前系统时间-lru时间
 
 
 
