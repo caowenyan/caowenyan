@@ -1,4 +1,4 @@
-package com.cloudyoung.common.wx.hystrix.config;
+package com.cao.util.hystrix.config;
 
 import com.alibaba.dubbo.common.URL;
 import com.netflix.hystrix.HystrixCommand;
@@ -9,10 +9,9 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * HystrixCommand.Setter 工厂，生成的配置会放入缓存，下次直接获取
- * Created by yangshaokai on 2018/2/7.
  */
 public class SetterFactory {
-
+    // 注意这里key是interface+method，若是多个方法重载，获取的也是一个，所以需要注意下这个地方
     private static ConcurrentHashMap<String, HystrixCommand.Setter> setterMap = new ConcurrentHashMap<String, HystrixCommand.Setter>();
 
     public static HystrixCommand.Setter create(String interfaceName, String methodName, URL url) {

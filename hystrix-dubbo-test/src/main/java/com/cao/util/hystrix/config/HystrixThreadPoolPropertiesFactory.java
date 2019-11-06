@@ -1,11 +1,10 @@
-package com.cloudyoung.common.wx.hystrix.config;
+package com.cao.util.hystrix.config;
 
 import com.alibaba.dubbo.common.URL;
 import com.netflix.hystrix.HystrixThreadPoolProperties;
 
 /**
- * 线程池相关配置生成
- * Created by yangshaokai on 2018/2/28.
+ * 通过dubbo的参数url来设置不同的hystrix线程池相关配置
  */
 public class HystrixThreadPoolPropertiesFactory {
 

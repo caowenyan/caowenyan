@@ -1,10 +1,10 @@
-package com.cloudyoung.common.wx.hystrix;
+package com.cao.util.hystrix;
 
 import com.alibaba.dubbo.common.Constants;
 import com.alibaba.dubbo.common.URL;
 import com.alibaba.dubbo.common.extension.Activate;
 import com.alibaba.dubbo.rpc.*;
-import com.cloudyoung.common.wx.hystrix.config.SetterFactory;
+import com.cao.util.hystrix.config.SetterFactory;
 import com.netflix.hystrix.HystrixCommand;
 
 /**
@@ -13,6 +13,7 @@ import com.netflix.hystrix.HystrixCommand;
 @Activate(group = Constants.CONSUMER)
 public class HystrixFilter implements Filter {
 
+    // 通过dubbo的拓展机制，执行injectExtension方法将dubboHystrixProperty注入到HystrixFilter
     private DubboHystrixProperty dubboHystrixProperty;
 
     @Override
@@ -27,7 +28,7 @@ public class HystrixFilter implements Filter {
             HystrixCommand.Setter setter = SetterFactory.create(interfaceName, methodName, url);
             //获取降级方法
             String fallback = url.getMethodParameter(methodName, "fallback");
-            DubboCommand command = new DubboCommand(setter, invoker, invocation, fallback);
+            DubboCommand command = new DubboCommand(setter, invoker, invocation, fallback, dubboHystrixProperty);
             Result result = command.execute();
             return result;
         }

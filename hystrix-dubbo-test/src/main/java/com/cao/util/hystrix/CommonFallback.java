@@ -1,21 +1,21 @@
-package com.cloudyoung.common.wx.hystrix.fallback;
+package com.cao.util.hystrix;
 
-import com.cloudyoung.common.wx.hystrix.fallback.annotation.HystrixMethodAnnotation;
+import com.cao.util.hystrix.fallback.annotation.HystrixMethodAnnotation;
 
 import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @author 曹文艳   (caowy@cloud-young.com)
- * @version V1.0
- * @description 默认降级服务,必须包含HystrixMethodAnnotation注解
- * @date 2018年05月31日 17:12
+ *  默认降级服务,必须包含HystrixMethodAnnotation注解
  */
 public class CommonFallback {
-    public static volatile Map<Class,Object> result = new HashMap<>();
+    /**
+     * key：需要降级的类
+     * value：对key所对应的类进行降级
+     */
+    public static volatile Map<Class,Object> result = new HashMap();
 
-    @HystrixMethodAnnotation
     public void fallbackVoid(){}
 
     public Object invoke(Class returnType) throws Exception{

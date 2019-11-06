@@ -1,11 +1,10 @@
-package com.cloudyoung.common.wx.hystrix.config;
+package com.cao.util.hystrix.config;
 
 import com.alibaba.dubbo.common.URL;
 import com.netflix.hystrix.HystrixCommandProperties;
 
 /**
  * 隔离策略
- * Created by yangshaokai on 2018/4/12.
  */
 public class IsolationStrategy {
 

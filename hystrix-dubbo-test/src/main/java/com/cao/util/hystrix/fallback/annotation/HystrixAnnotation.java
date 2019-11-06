@@ -1,4 +1,4 @@
-package com.cao.util.hystrix.annotation;
+package com.cao.util.hystrix.fallback.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -6,13 +6,14 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * @author 曹文艳   (caowy@cloud-young.com)
- * @version V1.0
- * @description
- * @date 2018年05月31日 14:32
+ * 主要作用为为了加载熔断后执行的类
  */
 @Target({ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
 public @interface HystrixAnnotation {
+
+    /**
+     * 执行降级的类
+     */
     Class interfaceClass() default Object.class;
 }
