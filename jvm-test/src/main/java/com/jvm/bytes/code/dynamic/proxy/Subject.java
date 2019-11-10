@@ -8,4 +8,5 @@ package com.jvm.bytes.code.dynamic.proxy;
  */
 public interface Subject {
     void test();
+    void test2();
 }
